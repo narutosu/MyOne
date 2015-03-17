@@ -28,5 +28,30 @@ package org.cocos2dx.cpp;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
+import com.tencent.android.tpush.XGLocalMessage;
+import com.tencent.android.tpush.XGPushConfig;
+import com.tencent.android.tpush.XGPushManager;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
 public class AppActivity extends Cocos2dxActivity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		{//信鸽通知
+			XGPushConfig.enableDebug(this, true);//日志显示，正式请关闭
+			Context context = getApplicationContext();
+			XGPushManager.registerPush(context);
+		}
+	}
+	
+    @Override  
+    protected void onDestroy() {  
+        super.onDestroy();  
+    }  
 }
+
+

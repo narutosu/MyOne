@@ -6,5 +6,9 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="D:/MyOne/proj.android/libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="D:/MyOne/proj.android/libs/mid-sdk-2.10.jar"/>
+	<classpathentry kind="lib" path="D:/MyOne/proj.android/libs/wup-1.0.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="D:/MyOne/proj.android/libs/Xg_sdk_v2.37.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
