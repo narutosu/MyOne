@@ -10,6 +10,9 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\scene">
+      <UniqueIdentifier>{78e47a32-5a2c-425a-bb95-8084d44dd30d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -18,6 +21,12 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TollgateScene.cpp">
+      <Filter>Classes\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BackgroundLayer.cpp">
+      <Filter>Classes\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -25,6 +34,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateScene.h">
+      <Filter>Classes\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BackgroundLayer.h">
+      <Filter>Classes\scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

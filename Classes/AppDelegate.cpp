@@ -1,5 +1,5 @@
 ﻿#include "AppDelegate.h"
-
+#include "TollgateScene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -15,18 +15,21 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLView::create("My Game");
+        glview = GLView::create("Don't Save Me!");
         director->setOpenGLView(glview);
     }
+	glview->setFrameSize(640,960);
 
+	glview->setDesignResolutionSize(480, 800, ResolutionPolicy::SHOW_ALL);
+
+	director->setContentScaleFactor(0.3f);
     // turn on display FPS
     director->setDisplayStats(true);
-
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+	auto tollScene = TollgateScene::scene();
     // create a scene. it's an autorelease object
-
+	director->runWithScene(tollScene);
     return true;
 }
 
