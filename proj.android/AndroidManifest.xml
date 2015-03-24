@@ -61,9 +61,26 @@
             	<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
         	</intent-filter>
     	</receiver>
+    	
+    	
+        <service
+        	android:name="org.cocos2dx.cpp.MyService"/>
+        
+        <receiver   
+    		android:name="org.cocos2dx.cpp.BootBroadcast"  
+    		android:permission="android.permission.RECEIVE_BOOT_COMPLETED">  
+    		<intent-filter>  
+        		<action android:name="android.intent.action.BOOT_COMPLETED" />  
+    		</intent-filter>  
+		</receiver>  
+		<receiver   
+   			 android:name="org.cocos2dx.cpp.Alarmrecerver" >  
+    		<intent-filter>  
+        		<action android:name="arui.alarm.action" />  
+    		</intent-filter>  
+		</receiver>  
 
-    	<!-- 【必须】 (2.30及以上版新增)展示通知的activity -->
-    	<!-- 【注意】 如果被打开的activity是启动模式为SingleTop，SingleTask或SingleInstance，请根据通知的异常自查列表第8点处理-->
+      
      	<activity
          	android:name="com.tencent.android.tpush.XGPushActivity"
          	android:exported="true" >

@@ -18,13 +18,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLView::create("Don't Save Me!");
         director->setOpenGLView(glview);
     }
+#if (CC_PLATFORM_WIN32==CC_TARGET_PLATFORM)
 	glview->setFrameSize(640,960);
+#endif
 
 	glview->setDesignResolutionSize(480, 800, ResolutionPolicy::SHOW_ALL);
 
 	director->setContentScaleFactor(0.3f);
     // turn on display FPS
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 	auto tollScene = TollgateScene::scene();

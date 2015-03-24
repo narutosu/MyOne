@@ -32,20 +32,26 @@ import com.tencent.android.tpush.XGLocalMessage;
 import com.tencent.android.tpush.XGPushConfig;
 import com.tencent.android.tpush.XGPushManager;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 
 public class AppActivity extends Cocos2dxActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		{//信鸽通知
-			XGPushConfig.enableDebug(this, true);//日志显示，正式请关闭
-			Context context = getApplicationContext();
-			XGPushManager.registerPush(context);
-		}
+		//{//广播
+			Intent intent = new Intent(AppActivity.this, Alarmreceiver.class);  
+	        PendingIntent sender = PendingIntent.getBroadcast(AppActivity.this, 0, intent, 0);  
+	        long firstime = SystemClock.elapsedRealtime();  
+	        AlarmManager am = (AlarmManager) AppActivity.this.getSystemService(Context.ALARM_SERVICE);  
+	        // 10秒一个周期，不停的发送广播  
+	        am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstime,  10 * 1000, sender); 
+		//}
 	}
 	
     @Override  
